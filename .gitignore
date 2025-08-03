@@ -62,3 +62,8 @@
 
 # Other
 *.log
+
+# Additional Visual Studio build artifacts
+*.tlog
+*.recipe
+*.lastbuildstate

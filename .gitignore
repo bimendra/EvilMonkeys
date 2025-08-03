@@ -39,3 +39,26 @@
 
 # debug information files
 *.dwo
+
+# Visual Studio files
+*.suo
+*.user
+*.sln.docstates
+*.vcxproj.user
+*.db
+*.db-shm
+*.db-wal
+*.vsidx
+
+# Build output directories
+/Debug/
+/Release/
+/x64/
+/bin/
+/obj/
+
+# Visual Studio hidden folder
+/.vs/
+
+# Other
+*.log

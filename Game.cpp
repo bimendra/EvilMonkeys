@@ -4,23 +4,25 @@
 #include "game.h"
 
 using namespace std;
-constexpr auto GAME_SPEED = 33.3333;
+constexpr auto GAME_SPEED = 500;
 
 bool Game::run(void)
 {
+  drawArea.createSprite(0, '$');  
+
   char key = ' ';
   startTime = timeGetTime();
   frameCount = 0;
   lastTime = 0;
 
+  posx = 0;
+
   while (key != 'q')
   {
     while (!getInput(&key))
     {
-      timerUpdate();
+      timerUpdate();      
     }
-    cout << frameCount << endl;
-    cout << frameCount / ((timeGetTime() - startTime) / 1000) << "fps" << endl;
   }
   
   return true;
@@ -43,6 +45,9 @@ void Game::timerUpdate()
   {
     return;
   }
+  drawArea.eraseSprit(posx, 5);
+  posx = (posx + 1) % 80;
+  drawArea.drawSprite(0, posx, 5);
   frameCount++;
   lastTime = timeGetTime();
 }
